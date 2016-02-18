@@ -104,7 +104,7 @@ namespace BotBits
                 Yellow = (Id)1010;
         }
 
-        public static class Goldmember
+        public static class BuildersClub
         {
             [Pack("-", BuildersClubOnly = true)]
             public const Id

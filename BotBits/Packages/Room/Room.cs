@@ -22,6 +22,7 @@ namespace BotBits
         public int Plays { get; private set; }
         public int Favorites { get; private set; }
         public int Likes { get; private set; }
+        public string Token { get; private set; }
         public double GravityMultiplier { get; private set; }
         public uint BackgroundColor { get; private set; }
         public bool Visible { get; private set; }
@@ -240,6 +241,7 @@ namespace BotBits
             this.Owner = e.Owner;
             this.WorldName = e.WorldName;
             this.Plays = e.Plays;
+            this.Token = StringUtils.Rot13(e.EncryptedToken);
             this.Campaign = e.Campaign;
             this.GravityMultiplier = e.GravityMultiplier;
             this.Favorites = e.Favorites;

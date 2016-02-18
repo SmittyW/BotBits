@@ -5,8 +5,8 @@ namespace BotBits.SendMessages
     /// <summary>
     ///     Sent to activate cyan key.
     /// </summary>
-    /// 
-    public sealed class CyanKeySendMessage : SendMessage<CyanKeySendMessage>
+    /// <seealso cref="RoomTokenSendMessage{T}" />
+    public sealed class CyanKeySendMessage : RoomTokenSendMessage<CyanKeySendMessage>
     {
         public CyanKeySendMessage()
         {
@@ -27,7 +27,7 @@ namespace BotBits.SendMessages
         /// <returns></returns>
         protected override Message GetMessage()
         {
-            return Message.Create("pressKey", this.X, this.Y, "cyan");
+            return Message.Create(this.RoomToken + "c", this.X, this.Y);
         }
     }
 }

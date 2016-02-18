@@ -5,8 +5,8 @@ namespace BotBits.SendMessages
     /// <summary>
     ///     Sent to activate green key.
     /// </summary>
-    /// 
-    public sealed class GreenKeySendMessage : SendMessage<GreenKeySendMessage>
+    /// <seealso cref="RoomTokenSendMessage{T}" />
+    public sealed class GreenKeySendMessage : RoomTokenSendMessage<GreenKeySendMessage>
     {
         public GreenKeySendMessage()
         {
@@ -27,7 +27,7 @@ namespace BotBits.SendMessages
         /// <returns></returns>
         protected override Message GetMessage()
         {
-            return Message.Create("pressKey", this.X, this.Y, "green");
+            return Message.Create(this.RoomToken + "g", this.X, this.Y);
         }
     }
 }

@@ -5,8 +5,8 @@ namespace BotBits.SendMessages
     /// <summary>
     ///     Sent to activate yellow key.
     /// </summary>
-    /// 
-    public sealed class YellowKeySendMessage : SendMessage<YellowKeySendMessage>
+    /// <seealso cref="RoomTokenSendMessage{T}" />
+    public sealed class YellowKeySendMessage : RoomTokenSendMessage<YellowKeySendMessage>
     {
         public YellowKeySendMessage()
         {
@@ -27,7 +27,7 @@ namespace BotBits.SendMessages
         /// <returns></returns>
         protected override Message GetMessage()
         {
-            return Message.Create("pressKey", this.X, this.Y, "yellow");
+            return Message.Create(this.RoomToken + "y", this.X, this.Y);
         }
     }
 }

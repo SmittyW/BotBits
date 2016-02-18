@@ -5,8 +5,8 @@ namespace BotBits.SendMessages
     /// <summary>
     ///     Sent to collect gold crown.
     /// </summary>
-    /// 
-    public sealed class GetCrownSendMessage : SendMessage<GetCrownSendMessage>
+    /// <seealso cref="RoomTokenSendMessage{T}" />
+    public sealed class GetCrownSendMessage : RoomTokenSendMessage<GetCrownSendMessage>
     {
         public GetCrownSendMessage()
         {
@@ -27,7 +27,7 @@ namespace BotBits.SendMessages
         /// <returns></returns>
         protected override Message GetMessage()
         {
-            return Message.Create("crown", this.X, this.Y);
+            return Message.Create(this.RoomToken + "k", this.X, this.Y);
         }
     }
 }
